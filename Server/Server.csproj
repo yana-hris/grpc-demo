@@ -17,11 +17,15 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\*.proto" GrpcServices="Server" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Protos\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Client\Client.csproj" />
 	</ItemGroup>
 
 </Project>

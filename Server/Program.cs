@@ -1,12 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Grpc.Core;
+using Calculator;
 using Greet;
+using Grpc.Core;
+
 using Server;
 
 var server = new Grpc.Core.Server
 {
-    Services = { GreetingService.BindService(new GreetingServiceImpl()) },
-    Ports = { new ServerPort("localhost", 50051, ServerCredentials.Insecure) }
+    Services = { 
+        GreetingService.BindService(new GreetingServiceImpl()),
+        CalculatorService.BindService(new CalculatorSeviceImpl())
+    },
+    Ports = { 
+        new ServerPort("localhost", 50051, ServerCredentials.Insecure) 
+    }
 };
 
 server.Start();

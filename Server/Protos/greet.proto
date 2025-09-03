@@ -1,6 +1,5 @@
 syntax="proto3";
 
-
 package greet;
 
 message Greeting {
@@ -16,7 +15,43 @@ message GreetingResponse {
 	string result = 1;
 }
 
+message GreetManyTimesRequest {
+	Greeting greeting = 1;
+}
+
+message GreetManyTimesResponse {
+	string result = 1;
+}
+
+message LongGreetRequest {
+	string name = 1;
+}
+
+message LongGreetResponse {
+	string result = 1;
+}
+
+message GreetEveryoneRequest {
+	Greeting greeting = 1;
+}
+
+message GreetEveryoneResponse {
+	string result = 1;
+}
+
 service GreetingService {
+
+	// Unary
 	rpc Greet(GreetingRequest) returns (GreetingResponse);
+
+	// Server Streaming
+	rpc GreetManyTimes (GreetManyTimesRequest) returns (stream GreetManyTimesResponse);
+
+	// Client Streaming
+	rpc LongGreet (stream LongGreetRequest) returns (LongGreetResponse);
+
+	// Bi-Directional Streaming
+	rpc GreetEveryone (stream GreetEveryoneRequest) returns (stream GreetEveryoneResponse);
+
 }
 

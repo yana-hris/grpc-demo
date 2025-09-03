@@ -11,6 +11,7 @@ This is a sample project built with **.NET 9** and **gRPC**, showcasing the four
 
 ## 📂 Project Structure
 
+```text
 grpc-demo/
 │── Client/ # Console client
 │ ├── Protos/ # Shared .proto files
@@ -23,7 +24,7 @@ grpc-demo/
 │ └── Program.cs # Server entry point
 │
 └── .gitignore
-
+```
 ---
 
 ## 🚀 Getting Started
@@ -35,17 +36,20 @@ grpc-demo/
    ```
 
 2. Run the server:
-```bash
-cd Server
-dotnet run
-```
+   ```bash
+   cd Server
+   dotnet run
+   ```
 
 
 3. Run the client (in a new terminal window):
-```bash
-cd Client
-dotnet run
-```
+   ```bash
+   cd Client
+   dotnet run
+   ```
+
+---
+   
 🧪 Demonstrations
 
 Unary RPC (Sum)
@@ -60,6 +64,8 @@ Input multiple numbers → server responds with their average.
 Bi-directional Streaming RPC (GreetEveryone / FindMaximum)
 Client and server exchange greetings or numbers dynamically until the stream is closed.
 
+---
+
 ⚙️ Technologies
 
 .NET 9
@@ -70,11 +76,14 @@ Grpc.Tools
 
 Google.Protobuf
 
+---
+
 📖 Useful Resources
 
 gRPC for .NET Documentation
 
 Introduction to gRPC
+---
 
 📝 License
 
